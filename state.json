@@ -1,0 +1,10 @@
+{
+  "last_run": null,
+  "schedule_enabled": false,
+  "issues": {},
+  "refactor": {
+    "last_scanned": null,
+    "scan_history": [],
+    "prs": []
+  }
+}
