@@ -1,11 +1,42 @@
 {
-  "last_run": "2026-03-25T17:50:00Z",
+  "last_run": "2026-03-27T07:15:00Z",
   "schedule_enabled": false,
   "issues": {
+    "3364": {
+      "title": "When partial_update=True is enabled, there is an error when performing an upsert operation on the collection",
+      "classified_as": "bug",
+      "status": "needs_attention",
+      "reason": "Server-side error code 1100, $meta field length mismatch during upsert with dynamic fields. Related to #3067."
+    },
+    "3361": {
+      "title": "Refactor: _get_schema() should return schema object instead of raw dict",
+      "classified_as": "feature_large",
+      "status": "skipped",
+      "reason": "Multi-file architectural refactor by XuanYang-cn"
+    },
+    "3360": {
+      "title": "Refactor: move search/query iterators from ORM to MilvusClient",
+      "classified_as": "feature_large",
+      "status": "skipped",
+      "reason": "Architectural change by XuanYang-cn"
+    },
+    "3356": {
+      "title": "file_resource APIs missing context in MilvusClient and missing entirely from AsyncMilvusClient",
+      "classified_as": "bug",
+      "status": "assigned",
+      "reason": "Assigned to @bigsheeper"
+    },
+    "3349": {
+      "title": "setuptools_scm>=9 breaks all builds — _types module removed",
+      "classified_as": "bug",
+      "status": "pr_exists",
+      "linked_prs": ["milvus-io/pymilvus#3357", "milvus-io/pymilvus#3359"],
+      "reason": "#3357 merged (workflow fix), #3359 open (full fix, approved, ci-passed)"
+    },
     "3339": {
       "title": "Search fails with numpy array data due to ambiguous truth value check",
       "classified_as": "bug",
-      "status": "pr_created",
+      "status": "pr_merged",
       "attempts": [
         {
           "date": "2026-03-25",
@@ -17,7 +48,7 @@
     },
     "3328": {
       "title": "support query ORDER BY in pymilvus client",
-      "classified_as": "feature",
+      "classified_as": "feature_large",
       "status": "skipped"
     },
     "3325": {
@@ -46,7 +77,7 @@
     },
     "3287": {
       "title": "Option to change base url for openai embedding",
-      "classified_as": "feature",
+      "classified_as": "feature_large",
       "status": "skipped"
     },
     "3262": {
@@ -57,22 +88,22 @@
     },
     "3217": {
       "title": "support search order by",
-      "classified_as": "feature",
+      "classified_as": "feature_large",
       "status": "skipped"
     },
     "3213": {
       "title": "Support Columnar Search Results for High Performance",
-      "classified_as": "feature",
+      "classified_as": "feature_large",
       "status": "skipped"
     },
     "3187": {
       "title": "Redesign Connection Management for Better Pooling and Context Isolation",
-      "classified_as": "feature",
+      "classified_as": "feature_large",
       "status": "skipped"
     },
     "3177": {
       "title": "Support query aggregation on pymilvus",
-      "classified_as": "feature",
+      "classified_as": "feature_large",
       "status": "skipped"
     },
     "3169": {
@@ -83,28 +114,28 @@
     },
     "3166": {
       "title": "auto remove backport branches",
-      "classified_as": "feature",
+      "classified_as": "feature_large",
       "status": "skipped"
     },
     "3134": {
       "title": "Refactor: Invasive Changes Required for Adding New Data Types",
-      "classified_as": "feature",
+      "classified_as": "feature_large",
       "status": "skipped"
     },
     "3133": {
       "title": "Refactor pymilvus/orm directory",
-      "classified_as": "feature",
+      "classified_as": "feature_large",
       "status": "skipped"
     },
     "3128": {
       "title": "Support AlterCollectionSchema api",
-      "classified_as": "feature",
+      "classified_as": "feature_large",
       "status": "skipped"
     },
     "3109": {
       "title": "token=None converted to 'None' string in connections.connect()",
       "classified_as": "bug",
-      "status": "pr_created",
+      "status": "pr_merged",
       "attempts": [
         {
           "date": "2026-03-25",
@@ -134,12 +165,12 @@
     },
     "3042": {
       "title": "Remove not inuse get in GrpcHandler",
-      "classified_as": "feature",
+      "classified_as": "feature_large",
       "status": "skipped"
     },
     "3041": {
       "title": "Remove not inused _get_info in GrpcHandler",
-      "classified_as": "feature",
+      "classified_as": "feature_large",
       "status": "skipped"
     },
     "3030": {
@@ -152,7 +183,7 @@
       "title": "wrong setuptools_scm integration due to break with setuptools_scm 10.0",
       "classified_as": "bug",
       "status": "needs_attention",
-      "reason": "Build tooling issue"
+      "reason": "Build tooling issue — related to #3349"
     },
     "3015": {
       "title": "bulk_writer tries to use /usr/local/lib and runs into permission error",
@@ -178,7 +209,7 @@
     },
     "2991": {
       "title": "Type-Safety for Async Milvus Client",
-      "classified_as": "feature",
+      "classified_as": "feature_large",
       "status": "skipped"
     },
     "2986": {
@@ -195,7 +226,7 @@
     },
     "2983": {
       "title": "Support CDC APIs",
-      "classified_as": "feature",
+      "classified_as": "feature_large",
       "status": "skipped"
     },
     "2981": {
@@ -248,7 +279,7 @@
     },
     "2901": {
       "title": "Update documentation for client-based implementation",
-      "classified_as": "feature",
+      "classified_as": "feature_large",
       "status": "skipped"
     },
     "2898": {
@@ -265,7 +296,7 @@
     },
     "2877": {
       "title": "add compression option at function call level",
-      "classified_as": "feature",
+      "classified_as": "feature_large",
       "status": "skipped"
     },
     "2875": {
@@ -294,12 +325,12 @@
     },
     "2832": {
       "title": "PyMilvus BestPractice examples on concurrency",
-      "classified_as": "feature",
+      "classified_as": "feature_large",
       "status": "skipped"
     }
   },
   "refactor": {
-    "last_scanned": "pymilvus/client/entity_helper.py",
+    "last_scanned": "pymilvus/client/async_grpc_handler.py",
     "scan_history": [
       "pymilvus/milvus_client/__init__.py",
       "pymilvus/milvus_client/_utils.py",
@@ -312,7 +343,25 @@
       "pymilvus/milvus_client/async_milvus_client.py",
       "pymilvus/client/abstract.py",
       "pymilvus/client/utils.py",
-      "pymilvus/client/entity_helper.py"
+      "pymilvus/client/entity_helper.py",
+      "pymilvus/client/__init__.py",
+      "pymilvus/client/check.py",
+      "pymilvus/client/constants.py",
+      "pymilvus/client/types.py",
+      "pymilvus/client/blob.py",
+      "pymilvus/client/cache.py",
+      "pymilvus/client/call_context.py",
+      "pymilvus/client/singleton_utils.py",
+      "pymilvus/client/ts_utils.py",
+      "pymilvus/client/embedding_list.py",
+      "pymilvus/client/search_result.py",
+      "pymilvus/client/interceptor.py",
+      "pymilvus/client/async_interceptor.py",
+      "pymilvus/client/global_topology.py",
+      "pymilvus/client/connection_manager.py",
+      "pymilvus/client/prepare.py",
+      "pymilvus/client/asynch.py",
+      "pymilvus/client/async_grpc_handler.py"
     ],
     "prs": [
       {
@@ -326,7 +375,137 @@
         "file": "pymilvus/client/entity_helper.py",
         "pr": "milvus-io/pymilvus#3344",
         "description": "Extract _get_dim helper to deduplicate 11 dimension lookups"
+      },
+      {
+        "date": "2026-03-26",
+        "file": "pymilvus/client/prepare.py",
+        "pr": "milvus-io/pymilvus#3346",
+        "description": "Consolidate duplicate common_pb2 import"
+      },
+      {
+        "date": "2026-03-26",
+        "file": "pymilvus/client/asynch.py",
+        "pr": "milvus-io/pymilvus#3363",
+        "description": "Remove dead code: unused _done_cb attribute, LoadCollectionFuture, LoadPartitionsFuture classes"
+      },
+      {
+        "date": "2026-03-27",
+        "file": "pymilvus/client/async_grpc_handler.py",
+        "pr": "milvus-io/pymilvus#3365",
+        "description": "Remove dead assignment in _get_info, redundant raise-from in ensure_channel_ready, unnecessary try/except in delete"
       }
     ]
+  },
+  "prs": {
+    "3365": {
+      "title": "refactor: remove dead code in async_grpc_handler.py",
+      "author": "pymilvus-bot",
+      "base": "master",
+      "type": "bot-master",
+      "status": "ci_pending",
+      "parent_pr": null,
+      "backports": [],
+      "fix_attempts": [],
+      "last_checked": "2026-03-27"
+    },
+    "3363": {
+      "title": "refactor: remove dead code in asynch.py",
+      "author": "pymilvus-bot",
+      "base": "master",
+      "type": "bot-master",
+      "status": "ci_passed_waiting_approve",
+      "parent_pr": null,
+      "backports": [],
+      "fix_attempts": [],
+      "last_checked": "2026-03-27"
+    },
+    "3359": {
+      "title": "fix: rewrite _version_helper.py to use only public setuptools_scm API",
+      "author": "XuanYang-cn",
+      "base": "master",
+      "type": "non-bot",
+      "status": "ci_passed_waiting_lgtm",
+      "parent_pr": null,
+      "backports": [],
+      "fix_attempts": [],
+      "last_checked": "2026-03-27"
+    },
+    "3295": {
+      "title": "fix: support explicit db_name in snapshot APIs",
+      "author": "zhuwenxing",
+      "base": "master",
+      "type": "non-bot",
+      "status": "ci_passed_hold",
+      "parent_pr": null,
+      "backports": [],
+      "fix_attempts": [],
+      "last_checked": "2026-03-27"
+    },
+    "3267": {
+      "title": "fix: consistency_level to return human-readable string",
+      "author": "veeceey",
+      "base": "master",
+      "type": "non-bot",
+      "status": "missing_ci",
+      "parent_pr": null,
+      "backports": [],
+      "fix_attempts": [],
+      "last_checked": "2026-03-27"
+    },
+    "3257": {
+      "title": "feat(client): add MinHash deduplication methods",
+      "author": "zhuwenxing",
+      "base": "master",
+      "type": "non-bot",
+      "status": "ci_failing_hold",
+      "parent_pr": null,
+      "backports": [],
+      "fix_attempts": [],
+      "last_checked": "2026-03-27"
+    },
+    "3214": {
+      "title": "feat: support columnar search result",
+      "author": "jac0626",
+      "base": "master",
+      "type": "non-bot",
+      "status": "merge_conflict",
+      "parent_pr": null,
+      "backports": [],
+      "fix_attempts": [],
+      "last_checked": "2026-03-27"
+    },
+    "3129": {
+      "title": "add interface for add_function_field",
+      "author": "MrPresent-Han",
+      "base": "master",
+      "type": "non-bot",
+      "status": "merge_conflict",
+      "parent_pr": null,
+      "backports": [],
+      "fix_attempts": [],
+      "last_checked": "2026-03-27"
+    },
+    "3061": {
+      "title": "enhance: pymilvus support minhash function",
+      "author": "cqy123456",
+      "base": "master",
+      "type": "non-bot",
+      "status": "merge_conflict",
+      "parent_pr": null,
+      "backports": [],
+      "fix_attempts": [],
+      "last_checked": "2026-03-27"
+    },
+    "3044": {
+      "title": "enhance: Add proper deprecated warning",
+      "author": "XuanYang-cn",
+      "base": "master",
+      "type": "non-bot",
+      "status": "merge_conflict",
+      "parent_pr": null,
+      "backports": [],
+      "fix_attempts": [],
+      "last_checked": "2026-03-27"
+    }
   }
 }

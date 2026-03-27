@@ -1,0 +1,13 @@
+{
+  "bot_name": "pymilvus-bot",
+  "bot_email": "pymilvus@zilliz.com",
+  "bot_token_file": "~/.config/pymilvus-bot/github-token",
+  "upstream_repo": "milvus-io/pymilvus",
+  "bot_fork": "pymilvus-bot/pymilvus",
+  "local_reference_repo": "~/Github/pymilvus",
+  "maintenance_repo": "~/Github/pymilvus-maintenance",
+  "clone_dir": "/tmp/pymilvus-bot-work",
+  "email_to": "xuan.yang@zilliz.com",
+  "email_cc": ["jumpthepig@gmail.com", "pymilvus@zilliz.com"],
+  "email_subject_prefix": "PyMilvus Daily Maintenance Report"
+}
