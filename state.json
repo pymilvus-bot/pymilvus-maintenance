@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-27T07:15:00Z",
+  "last_run": "2026-03-30T03:30:00Z",
   "schedule_enabled": false,
   "issues": {
     "3364": {
@@ -31,16 +31,17 @@
       "classified_as": "bug",
       "status": "pr_exists",
       "linked_prs": ["milvus-io/pymilvus#3357", "milvus-io/pymilvus#3359"],
-      "reason": "#3357 merged (workflow fix), #3359 open (full fix, approved, ci-passed)"
+      "reason": "#3357 merged, #3359 open (approved, ci-passed, ready to merge)"
     },
     "3339": {
       "title": "Search fails with numpy array data due to ambiguous truth value check",
       "classified_as": "bug",
       "status": "pr_merged",
+      "reason": "PR #3342 merged. Issue still open — needs QA sign-off.",
       "attempts": [
         {
           "date": "2026-03-25",
-          "approach": "Replace `data and isinstance(data[0], bytes)` with explicit len check in grpc_handler.py and async_grpc_handler.py",
+          "approach": "Replace `data and isinstance(data[0], bytes)` with explicit len check",
           "result": "success",
           "pr": "milvus-io/pymilvus#3342"
         }
@@ -61,19 +62,19 @@
       "title": "MilvusClient with local Milvus Lite path hangs on 2.6.10",
       "classified_as": "bug",
       "status": "needs_attention",
-      "reason": "v2.6.10 regression, duplicate of #3314"
+      "reason": "v2.6.10 regression, duplicate of #3314 (now closed)"
     },
     "3316": {
       "title": "ConnectionNotExistException after commit 2c2d6eb",
       "classified_as": "bug",
-      "status": "needs_attention",
-      "reason": "v2.6.10 regression"
+      "status": "wontfix",
+      "reason": "wontfix label"
     },
     "3314": {
       "title": "MilvusClient fails when using local path on 2.6.10",
       "classified_as": "bug",
-      "status": "needs_attention",
-      "reason": "v2.6.10 regression"
+      "status": "closed",
+      "reason": "Issue closed"
     },
     "3287": {
       "title": "Option to change base url for openai embedding",
@@ -84,7 +85,7 @@
       "title": "Collection() fails to inherit db_name when reusing connection created by MilvusClient",
       "classified_as": "bug",
       "status": "wontfix",
-      "reason": "Expected behavior per maintainer, fix PRs filed to langchain/llama_index"
+      "reason": "Expected behavior per maintainer"
     },
     "3217": {
       "title": "support search order by",
@@ -136,10 +137,11 @@
       "title": "token=None converted to 'None' string in connections.connect()",
       "classified_as": "bug",
       "status": "pr_merged",
+      "reason": "PR #3343 merged. Issue still open — needs QA sign-off.",
       "attempts": [
         {
           "date": "2026-03-25",
-          "approach": "Replace str(x) or '' with explicit None check before str() in connections.py",
+          "approach": "Replace str(x) or '' with explicit None check",
           "result": "success",
           "pr": "milvus-io/pymilvus#3343"
         }
@@ -222,7 +224,7 @@
       "title": "consistency_level returned as number instead of semantic term",
       "classified_as": "bug",
       "status": "needs_attention",
-      "reason": "Possibly simple mapping fix"
+      "reason": "Possibly simple mapping fix — PR #3267 exists but missing CI"
     },
     "2983": {
       "title": "Support CDC APIs",
@@ -327,10 +329,272 @@
       "title": "PyMilvus BestPractice examples on concurrency",
       "classified_as": "feature_large",
       "status": "skipped"
+    },
+    "2831": {
+      "title": "Robust KeepAlive in MilvusClient and AsyncMilvusClient",
+      "classified_as": "feature_large",
+      "status": "skipped"
+    },
+    "2827": {
+      "title": "Use of load_dotenv causes AssertionError crash",
+      "classified_as": "bug",
+      "status": "assigned",
+      "reason": "Assigned to @joaquindas, maintainer response suggests default should not raise"
+    },
+    "2807": {
+      "title": "Schema not updated after adding fields via ORM",
+      "classified_as": "bug",
+      "status": "needs_attention",
+      "reason": "ORM schema caching issue, filed by zhuwenxing"
+    },
+    "2804": {
+      "title": "param page_retain_order was not passed correctly",
+      "classified_as": "bug",
+      "status": "pr_created",
+      "attempts": [
+        {
+          "date": "2026-03-30",
+          "approach": "Write local params dict back to param['params'] so get_params() sees modifications",
+          "result": "success",
+          "pr": "milvus-io/pymilvus#3366"
+        }
+      ]
+    },
+    "2803": {
+      "title": "Retry on thinner RPC call to avoid re-parsing params",
+      "classified_as": "feature_large",
+      "status": "skipped"
+    },
+    "2789": {
+      "title": "index_params.add_index() should check the inner params data type",
+      "classified_as": "bug",
+      "status": "assigned",
+      "reason": "Assigned to @XuanYang-cn"
+    },
+    "2775": {
+      "title": "Pymilvus Fails to Import with Numpy >= 2.0.0",
+      "classified_as": "bug",
+      "status": "wontfix",
+      "reason": "wontfix label"
+    },
+    "2764": {
+      "title": "Remove the usage of client.abstract.CollectionSchema",
+      "classified_as": "feature_large",
+      "status": "skipped"
+    },
+    "2763": {
+      "title": "Support mmap_enabled and mmap.enabled",
+      "classified_as": "feature_large",
+      "status": "skipped"
+    },
+    "2759": {
+      "title": "AsyncMilvusClient.hybrid_search frequently times out",
+      "classified_as": "question",
+      "status": "skipped"
+    },
+    "2757": {
+      "title": "Add get_persistence_segment_info",
+      "classified_as": "feature_large",
+      "status": "skipped"
+    },
+    "2756": {
+      "title": "Add get_query_segment_info",
+      "classified_as": "feature_large",
+      "status": "skipped"
+    },
+    "2743": {
+      "title": "milvus supports Text field type — how to add in pymilvus?",
+      "classified_as": "question",
+      "status": "skipped"
+    },
+    "2732": {
+      "title": "empty bug report",
+      "classified_as": "bug",
+      "status": "wontfix",
+      "reason": "wontfix label"
+    },
+    "2711": {
+      "title": "Optimize SDK documentation description",
+      "classified_as": "feature_large",
+      "status": "skipped"
+    },
+    "2710": {
+      "title": "JSON index documentation issue + INVERTED index error",
+      "classified_as": "question",
+      "status": "skipped",
+      "reason": "Documentation issue, has maintainer response"
+    },
+    "2703": {
+      "title": "Expression error with dict-format string",
+      "classified_as": "bug",
+      "status": "wontfix",
+      "reason": "wontfix label"
+    },
+    "2698": {
+      "title": "Failed to create new connection error in async_milvus_client",
+      "classified_as": "question",
+      "status": "skipped"
+    },
+    "2697": {
+      "title": "Cannot connect to milvus on k8s — TypeError non-trivial cinit",
+      "classified_as": "bug",
+      "status": "needs_attention",
+      "reason": "k8s-specific gRPC issue"
+    },
+    "2696": {
+      "title": "Granting permissions inconsistent behavior for '' and \"\"",
+      "classified_as": "bug",
+      "status": "needs_attention",
+      "reason": "Permissions quoting inconsistency"
+    },
+    "2693": {
+      "title": "Can't list_collections() as custom user",
+      "classified_as": "bug",
+      "status": "needs_attention",
+      "reason": "Permissions issue"
+    },
+    "2683": {
+      "title": "Create database with invalid properties does not report error",
+      "classified_as": "bug",
+      "status": "needs_attention",
+      "reason": "Server-side validation"
+    },
+    "2682": {
+      "title": "Milvus_client lacks interfaces",
+      "classified_as": "feature_large",
+      "status": "skipped"
+    },
+    "2675": {
+      "title": "TextMatch search doesn't work",
+      "classified_as": "question",
+      "status": "skipped"
+    },
+    "2674": {
+      "title": "AioRpcError with concurrent load_partitions",
+      "classified_as": "question",
+      "status": "skipped"
+    },
+    "2664": {
+      "title": "HybridSearch enable filter instead of expr",
+      "classified_as": "feature_large",
+      "status": "skipped"
+    },
+    "2662": {
+      "title": "milvus-lite crashes with collection named 'figure'",
+      "classified_as": "bug",
+      "status": "needs_attention",
+      "reason": "milvus-lite issue"
+    },
+    "2661": {
+      "title": "Support Multi-Destination Writing in RemoteBulkWriter",
+      "classified_as": "feature_large",
+      "status": "skipped"
+    },
+    "2660": {
+      "title": "Hybrid Search implementation always throws error",
+      "classified_as": "bug",
+      "status": "needs_attention",
+      "reason": "Needs investigation"
+    },
+    "2659": {
+      "title": "milvus-lite BM25 metric type not found",
+      "classified_as": "bug",
+      "status": "needs_attention",
+      "reason": "milvus-lite issue"
+    },
+    "2651": {
+      "title": "MilvusClient defaults to localhost instead of given ip",
+      "classified_as": "bug",
+      "status": "needs_attention",
+      "reason": "Connection default issue"
+    },
+    "2628": {
+      "title": "Handling Errors in RemoteBulkWriter.commit()",
+      "classified_as": "bug",
+      "status": "needs_attention",
+      "reason": "Error handling in bulk writer"
+    },
+    "2617": {
+      "title": "describecollection output add created_timestamp",
+      "classified_as": "feature_large",
+      "status": "skipped"
+    },
+    "2613": {
+      "title": "Not able to create the pymilvus client (milvus-lite)",
+      "classified_as": "bug",
+      "status": "needs_attention",
+      "reason": "milvus-lite issue"
+    },
+    "2612": {
+      "title": "Python3.8 has reached end-of-life and Python3.13 is stable",
+      "classified_as": "bug",
+      "status": "needs_attention",
+      "reason": "Python version support"
+    },
+    "2610": {
+      "title": "Rename FLOAT16_VECTOR and BFLOAT16_VECTOR",
+      "classified_as": "feature_large",
+      "status": "skipped"
+    },
+    "2609": {
+      "title": "optimize iterator handle in search request",
+      "classified_as": "feature_large",
+      "status": "skipped"
+    },
+    "2594": {
+      "title": "Unexpected error for create_database with incorrect parameter format",
+      "classified_as": "bug",
+      "status": "needs_attention",
+      "reason": "Server-side validation"
+    },
+    "2593": {
+      "title": "get_compaction_plans/state interfaces cannot be used independently",
+      "classified_as": "bug",
+      "status": "needs_attention",
+      "reason": "Server-side compaction API"
+    },
+    "2592": {
+      "title": "query_iterator returns pymilvus.orm.iterator.QueryIterator type",
+      "classified_as": "bug",
+      "status": "needs_attention",
+      "reason": "Iterator return type issue"
+    },
+    "2591": {
+      "title": "using AsyncMilvusClient in FastAPI",
+      "classified_as": "question",
+      "status": "skipped"
+    },
+    "2589": {
+      "title": "partition_names parameter name mismatch in hybrid_search error message",
+      "classified_as": "bug",
+      "status": "needs_attention",
+      "reason": "Error message inconsistency"
+    },
+    "2588": {
+      "title": "Unexpected error for invalid hybrid_search reqs and ranker",
+      "classified_as": "bug",
+      "status": "needs_attention",
+      "reason": "Error handling in hybrid_search"
+    },
+    "2587": {
+      "title": "Error message for non-string collection name not user friendly",
+      "classified_as": "bug",
+      "status": "needs_attention",
+      "reason": "Error message improvement"
+    },
+    "2586": {
+      "title": "How to install pymilvus 2.5.3",
+      "classified_as": "question",
+      "status": "skipped"
+    },
+    "2546": {
+      "title": "Does pymilvus support float16/bfloat16 embeddings?",
+      "classified_as": "question",
+      "status": "skipped"
     }
   },
   "refactor": {
-    "last_scanned": "pymilvus/client/async_grpc_handler.py",
+    "last_scanned": "pymilvus/client/grpc_handler.py",
     "scan_history": [
       "pymilvus/milvus_client/__init__.py",
       "pymilvus/milvus_client/_utils.py",
@@ -361,26 +625,30 @@
       "pymilvus/client/connection_manager.py",
       "pymilvus/client/prepare.py",
       "pymilvus/client/asynch.py",
-      "pymilvus/client/async_grpc_handler.py"
+      "pymilvus/client/async_grpc_handler.py",
+      "pymilvus/client/grpc_handler.py"
     ],
     "prs": [
       {
         "date": "2026-03-25",
         "file": "pymilvus/milvus_client/milvus_client.py, pymilvus/milvus_client/async_milvus_client.py",
         "pr": "milvus-io/pymilvus#3340",
-        "description": "Remove 7 redundant raise-ex-from-ex try/except blocks"
+        "description": "Remove 7 redundant raise-ex-from-ex try/except blocks",
+        "status": "closed"
       },
       {
         "date": "2026-03-25",
         "file": "pymilvus/client/entity_helper.py",
         "pr": "milvus-io/pymilvus#3344",
-        "description": "Extract _get_dim helper to deduplicate 11 dimension lookups"
+        "description": "Extract _get_dim helper to deduplicate 11 dimension lookups",
+        "status": "merged"
       },
       {
         "date": "2026-03-26",
         "file": "pymilvus/client/prepare.py",
         "pr": "milvus-io/pymilvus#3346",
-        "description": "Consolidate duplicate common_pb2 import"
+        "description": "Consolidate duplicate common_pb2 import",
+        "status": "merged"
       },
       {
         "date": "2026-03-26",
@@ -393,12 +661,18 @@
         "file": "pymilvus/client/async_grpc_handler.py",
         "pr": "milvus-io/pymilvus#3365",
         "description": "Remove dead assignment in _get_info, redundant raise-from in ensure_channel_ready, unnecessary try/except in delete"
+      },
+      {
+        "date": "2026-03-30",
+        "file": "pymilvus/client/grpc_handler.py",
+        "pr": "milvus-io/pymilvus#3367",
+        "description": "Remove 6 redundant raise-e-from-e patterns in grpc_handler.py"
       }
     ]
   },
   "prs": {
-    "3365": {
-      "title": "refactor: remove dead code in async_grpc_handler.py",
+    "3367": {
+      "title": "refactor: remove redundant raise-from in grpc_handler.py",
       "author": "pymilvus-bot",
       "base": "master",
       "type": "bot-master",
@@ -406,7 +680,29 @@
       "parent_pr": null,
       "backports": [],
       "fix_attempts": [],
-      "last_checked": "2026-03-27"
+      "last_checked": "2026-03-30"
+    },
+    "3366": {
+      "title": "fix: ensure page_retain_order is passed to search params",
+      "author": "pymilvus-bot",
+      "base": "master",
+      "type": "bot-master",
+      "status": "ci_pending",
+      "parent_pr": null,
+      "backports": [],
+      "fix_attempts": [],
+      "last_checked": "2026-03-30"
+    },
+    "3365": {
+      "title": "refactor: remove dead code in async_grpc_handler.py",
+      "author": "pymilvus-bot",
+      "base": "master",
+      "type": "bot-master",
+      "status": "ci_passed_waiting_approve",
+      "parent_pr": null,
+      "backports": [],
+      "fix_attempts": [],
+      "last_checked": "2026-03-30"
     },
     "3363": {
       "title": "refactor: remove dead code in asynch.py",
@@ -417,29 +713,29 @@
       "parent_pr": null,
       "backports": [],
       "fix_attempts": [],
-      "last_checked": "2026-03-27"
+      "last_checked": "2026-03-30"
     },
     "3359": {
       "title": "fix: rewrite _version_helper.py to use only public setuptools_scm API",
       "author": "XuanYang-cn",
       "base": "master",
       "type": "non-bot",
-      "status": "ci_passed_waiting_lgtm",
+      "status": "approved_ready_merge",
       "parent_pr": null,
       "backports": [],
       "fix_attempts": [],
-      "last_checked": "2026-03-27"
+      "last_checked": "2026-03-30"
     },
     "3295": {
       "title": "fix: support explicit db_name in snapshot APIs",
       "author": "zhuwenxing",
       "base": "master",
       "type": "non-bot",
-      "status": "ci_passed_hold",
+      "status": "merge_conflict_hold",
       "parent_pr": null,
       "backports": [],
       "fix_attempts": [],
-      "last_checked": "2026-03-27"
+      "last_checked": "2026-03-30"
     },
     "3267": {
       "title": "fix: consistency_level to return human-readable string",
@@ -450,7 +746,7 @@
       "parent_pr": null,
       "backports": [],
       "fix_attempts": [],
-      "last_checked": "2026-03-27"
+      "last_checked": "2026-03-30"
     },
     "3257": {
       "title": "feat(client): add MinHash deduplication methods",
@@ -461,7 +757,7 @@
       "parent_pr": null,
       "backports": [],
       "fix_attempts": [],
-      "last_checked": "2026-03-27"
+      "last_checked": "2026-03-30"
     },
     "3214": {
       "title": "feat: support columnar search result",
@@ -472,7 +768,7 @@
       "parent_pr": null,
       "backports": [],
       "fix_attempts": [],
-      "last_checked": "2026-03-27"
+      "last_checked": "2026-03-30"
     },
     "3129": {
       "title": "add interface for add_function_field",
@@ -483,7 +779,7 @@
       "parent_pr": null,
       "backports": [],
       "fix_attempts": [],
-      "last_checked": "2026-03-27"
+      "last_checked": "2026-03-30"
     },
     "3061": {
       "title": "enhance: pymilvus support minhash function",
@@ -494,7 +790,7 @@
       "parent_pr": null,
       "backports": [],
       "fix_attempts": [],
-      "last_checked": "2026-03-27"
+      "last_checked": "2026-03-30"
     },
     "3044": {
       "title": "enhance: Add proper deprecated warning",
@@ -505,7 +801,7 @@
       "parent_pr": null,
       "backports": [],
       "fix_attempts": [],
-      "last_checked": "2026-03-27"
+      "last_checked": "2026-03-30"
     }
   }
 }
